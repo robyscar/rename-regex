@@ -87,6 +87,16 @@ namespace RenameRegex
                 string[] dirs = Directory.GetDirectories(
                     Environment.CurrentDirectory,
                     fileMatch,
+
+                    // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator
+                    // ?: operator (C# reference)
+                    // condition ? consequent : alternative
+                    // c ? true : false
+
+                    // The conditional operator ?:, also known as the ternary conditional operator,
+                    // evaluates a Boolean expression and returns the result of one of the two expressions,
+                    // depending on whether the Boolean expression evaluates to true or false
+
                     recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
 
                 allItems.AddRange(dirs);
